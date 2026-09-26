@@ -813,8 +813,9 @@ interface MeshState {
    */
   installPrompt: BeforeInstallPromptEvent | null;
   /**
-   * True in the installed app's own window, and in a tab that has just
-   * installed it. The install actions are hidden then.
+   * True once the app is known to be installed: in its own window, in any
+   * Chromium tab once it is installed, and in the tab that just installed it.
+   * The install actions are hidden then.
    */
   appInstalled: boolean;
   /** Whether the "Install as a desktop app" guide dialog is open. */
@@ -2185,11 +2186,10 @@ export const useMeshStore = create<MeshState & MeshActions>((set, get) => ({
       // outlives the session it was noticed in.
       updateAvailable: get().updateAvailable,
       // Browser facts, not session ones: Chromium hands the install prompt
-      // over once per page load, and the guide can be open over the connect
-      // screen, which a failed connect attempt resets under it.
+      // over once per page load. The guide still closes here, since the reset
+      // zeroes `openModals` under it.
       installPrompt: get().installPrompt,
       appInstalled: get().appInstalled,
-      installGuideOpen: get().installGuideOpen,
       // Locale is a global (pre-connect) preference kept in localStorage, not
       // per-radio session state.
       locale: get().locale,

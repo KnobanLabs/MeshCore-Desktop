@@ -7,6 +7,9 @@
   "scope": "/",
   "display": "standalone",
   "launch_handler": { "client_mode": "focus-existing" },
+  "related_applications": [
+    { "platform": "webapp", "url": "/manifest.webmanifest" }
+  ],
   "background_color": "#0f1117",
   "theme_color": "#1a1d27",
   "icons": [

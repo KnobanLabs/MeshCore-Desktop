@@ -25,6 +25,8 @@ import { IdentityCheckModal } from './IdentityCheckModal';
 import { RestoreOfferModal } from './RestoreOfferModal';
 import { CommandPalette } from './CommandPalette';
 import { InstallGuideModal } from './InstallGuideModal';
+// Captures the install prompt and detects an installed app at startup.
+import '@/lib/pwa/install';
 import { AutomationRunner } from './AutomationRunner';
 import { MessageAnnouncer } from './MessageAnnouncer';
 import { SyncAnnouncer } from './SyncProgressView';

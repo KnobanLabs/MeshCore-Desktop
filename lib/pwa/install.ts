@@ -20,6 +20,13 @@ declare global {
   interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent;
   }
+  interface Navigator {
+    /**
+     * Chromium only. Lists the manifest's `related_applications` that are
+     * installed; a `webapp` entry naming our own manifest is this app.
+     */
+    getInstalledRelatedApps?: () => Promise<unknown[]>;
+  }
 }
 
 /**
@@ -56,7 +63,9 @@ export async function installApp(): Promise<void> {
   try {
     await installPrompt.prompt();
   } catch {
-    // Already used, e.g. by a second click while the dialog was up.
+    // Rejects when the event was already used, e.g. by a second click while
+    // the dialog was up. Every caller runs from a click, so the other cause,
+    // a missing user activation, doesn't arise.
   } finally {
     setInstallPrompt(null);
   }
@@ -65,11 +74,24 @@ export async function installApp(): Promise<void> {
 // Chromium can fire `beforeinstallprompt` before hydration reaches this
 // module, so a script in `app/layout.tsx` parks that one on `window` to be
 // adopted here; any later one lands in the listener below.
+//
+// "Installed" has three sources: running in the app's own window (including a
+// tab Chromium moves into one without a reload), the `related_applications`
+// self-entry in the manifest for any other tab once the app is installed, and
+// `appinstalled` for the tab that installs it.
 if (typeof window !== 'undefined') {
   const store = useMeshStore.getState();
-  if (matchMedia('(display-mode: standalone)').matches) {
-    store.setAppInstalled(true);
-  }
+  const standalone = matchMedia('(display-mode: standalone)');
+  if (standalone.matches) store.setAppInstalled(true);
+  standalone.addEventListener('change', (e) => {
+    if (e.matches) useMeshStore.getState().setAppInstalled(true);
+  });
+  void navigator
+    .getInstalledRelatedApps?.()
+    .then((apps) => {
+      if (apps.length > 0) useMeshStore.getState().setAppInstalled(true);
+    })
+    .catch(() => {});
   const early: unknown = Reflect.get(window, EARLY_INSTALL_PROMPT);
   if (early instanceof Event) {
     store.setInstallPrompt(early as BeforeInstallPromptEvent);
