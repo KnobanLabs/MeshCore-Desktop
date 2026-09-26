@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.5.0](https://github.com/kNoAPP/MeshCore-Desktop/compare/v2.4.0...v2.5.0) (2026-09-26)
+
+
+### Features
+
+* make the app installable as a desktop app ([#464](https://github.com/kNoAPP/MeshCore-Desktop/issues/464)) ([588a986](https://github.com/kNoAPP/MeshCore-Desktop/commit/588a986bada90d8fdc04ab0b474161445b06bc28))
+
 ## [2.4.0](https://github.com/kNoAPP/MeshCore-Desktop/compare/v2.3.0...v2.4.0) (2026-09-26)
 
 
