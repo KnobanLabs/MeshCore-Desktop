@@ -1,6 +1,6 @@
 ---
 # Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-# (https://github.com/kNoAPP/MeshCore-Desktop)
+# (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 name: completing-tickets
 description: >
@@ -29,10 +29,10 @@ owns everything from "PR opened" to "approved".
 
 ## 0. Scope the request
 
-"Ticket" always means a **GitHub Issue** in `kNoAPP/MeshCore-Desktop`. A count
-in the request — "complete a ticket", "complete two tickets", "knock out five
-tickets" — is a count of issues to deliver, and the same rules apply when the
-count is one.
+"Ticket" always means a **GitHub Issue** in `KnobanLabs/MeshCore-Desktop`. A
+count in the request — "complete a ticket", "complete two tickets", "knock out
+five tickets" — is a count of issues to deliver, and the same rules apply when
+the count is one.
 
 **If the user named the tickets** (links, `#41`, or unambiguous titles), work
 exactly those and nothing else.
@@ -41,7 +41,7 @@ exactly those and nothing else.
 issues:
 
 ```bash
-gh issue list --repo kNoAPP/MeshCore-Desktop --state open --limit 100 \
+gh issue list --repo KnobanLabs/MeshCore-Desktop --state open --limit 100 \
   --json number,title,labels,assignees,milestone,createdAt,url
 ```
 
@@ -50,9 +50,9 @@ Before committing to a candidate, pull the detail the exclusions below depend
 on:
 
 ```bash
-gh issue view <n> --repo kNoAPP/MeshCore-Desktop \
+gh issue view <n> --repo KnobanLabs/MeshCore-Desktop \
   --json number,title,body,comments,assignees,labels,url
-gh api "repos/kNoAPP/MeshCore-Desktop/issues/<n>/timeline?per_page=100" \
+gh api "repos/KnobanLabs/MeshCore-Desktop/issues/<n>/timeline?per_page=100" \
   --jq '[.[] | select(.event == "cross-referenced" or .event == "connected")]'
 ```
 
@@ -110,7 +110,7 @@ body and the conversation.
 
 ```bash
 ISSUE=41   # the issue number
-REPO=kNoAPP/MeshCore-Desktop
+REPO=KnobanLabs/MeshCore-Desktop
 
 gh issue view "$ISSUE" --repo "$REPO" \
   --json number,title,body,state,labels,assignees,milestone,comments,url

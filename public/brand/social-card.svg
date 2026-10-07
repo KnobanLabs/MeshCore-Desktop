@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <!-- Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-       (https://github.com/kNoAPP/MeshCore-Desktop) -->
+       (https://github.com/KnobanLabs/MeshCore-Desktop) -->
   <defs>
     <radialGradient id="glow" cx="600" cy="315" r="560" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#4f8ef7" stop-opacity="0.16"/>

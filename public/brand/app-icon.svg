@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <!-- Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-       (https://github.com/kNoAPP/MeshCore-Desktop) -->
+       (https://github.com/KnobanLabs/MeshCore-Desktop) -->
   <defs>
     <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1c2130"/>

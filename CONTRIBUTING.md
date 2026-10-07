@@ -18,7 +18,7 @@ started.
 ## Development Setup
 
 ```bash
-git clone https://github.com/kNoAPP/MeshCore-Desktop.git
+git clone https://github.com/KnobanLabs/MeshCore-Desktop.git
 cd MeshCore-Desktop
 npm install
 npm run dev
