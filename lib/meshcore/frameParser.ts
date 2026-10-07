@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 // The payload arrives with its delimiter and length stripped.
 type FrameCallback = (frame: Uint8Array) => void;

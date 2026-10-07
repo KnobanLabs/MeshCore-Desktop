@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';

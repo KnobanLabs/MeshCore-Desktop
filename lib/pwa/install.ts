@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 import { useMeshStore } from '@/store/meshStore';
 import { EARLY_INSTALL_PROMPT } from './config';

@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 /**
  * Locales the UI ships translations for. `en` is the authoritative base and

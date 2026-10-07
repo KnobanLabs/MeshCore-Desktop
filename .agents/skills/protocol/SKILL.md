@@ -1,6 +1,6 @@
 ---
 # Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-# (https://github.com/kNoAPP/MeshCore-Desktop)
+# (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 name: protocol
 description: >

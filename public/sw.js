@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 // MeshCore Desktop service worker. Gives the app an offline-capable shell so
 // the page loads after a cold reload with no network. Strategy:

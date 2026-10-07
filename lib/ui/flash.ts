@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Knoban LLC. All rights reserved.
-// (https://github.com/kNoAPP/MeshCore-Desktop)
+// (https://github.com/KnobanLabs/MeshCore-Desktop)
 
 // Must match the `.msg-flash` animation duration in `app/globals.css`.
 const FLASH_DURATION_MS = 1600;
